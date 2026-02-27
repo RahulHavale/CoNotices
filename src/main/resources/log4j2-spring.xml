@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <Appenders>
+
+        <!-- Console -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout
+                    pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level %c{1} - %msg%n"/>
+        </Console>
+
+        <!-- HTTP Appender to Splunk HEC -->
+        <Http name="SplunkHttp"
+              url="https://localhost:8088/services/collector"
+              method="POST">
+
+            <Property name="Authorization">
+                Splunk 970b8bbc-09a0-42d6-ac0d-ed5c3cf3a097
+            </Property>
+
+            <Property name="Content-Type">
+                application/json
+            </Property>
+
+            <PatternLayout pattern='{"event":"%m","level":"%level","logger":"%c","time":"%d{ISO8601}"}'/>
+
+        </Http>
+
+    </Appenders>
+
+    <Loggers>
+
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="SplunkHttp"/>
+        </Root>
+
+    </Loggers>
+
+</Configuration>

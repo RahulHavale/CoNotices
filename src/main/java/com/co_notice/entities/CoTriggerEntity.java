@@ -1,35 +1,27 @@
 package com.co_notice.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import java.time.LocalDate;
+import lombok.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="co_trigger_tbl")
+@Table(name="co_triggers1")
 public class CoTriggerEntity {
+
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name="TRG_ID")
     private Long triggerId;
 
+    @Column(name="CASE_NUM")
     private Long caseNum;
 
-    private Long edId;
+    @Column(name="TRG_STATUS")
+    private String triggerStatus; // P / C
 
-    private String noticeUrl;
+    private String co_pdf;
 
-    private String coPdf;
-
-    private LocalDate printDate;
-
-    private String noticeStatus;
-
-    private LocalDate createdDate;
+    private String notice_url;
 }

@@ -1,41 +1,30 @@
 package com.co_notice.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import java.time.LocalDate;
+import lombok.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="elig_tbl")
+@Table(name="eligibility_dtls1")
 public class EDEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="ED_ID")
     private Long edId;
 
-//    @ManyToOne
-//    @JoinColumn(name="caseNum")
+    @Column(name="CASE_NUM")
     private Long caseNum;
 
+    @Column(name="PLAN_NAME")
     private String planName;
 
-    private String planStatus;
+    @Column(name="PLAN_STATUS")
+    private String planStatus; // AP / DN
 
-    private LocalDate eligStartDate;
-
-    private LocalDate eligEndDate;
-
-    private Double benifitAmt;
-
+    @Column(name="DENIAL_REASON")
     private String denialReason;
-
-    private LocalDate createdDate;
-
 }
