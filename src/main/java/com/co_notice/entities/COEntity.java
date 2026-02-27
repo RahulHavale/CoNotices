@@ -1,10 +1,7 @@
 package com.co_notice.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 
@@ -13,24 +10,20 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="co_notice_tbl")
+@Table(name="co_notice_tbl1")
 public class COEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long noticId;
+    private Long noticeId;
 
-//    @ManyToOne
-//    @JoinColumn(name="caseNum")
     private Long caseNum;
 
-    @ManyToOne
-    @JoinColumn(name="edId")
-    private EDEntity edId;
+    private Long edId;
 
     private String noticeUrl;
 
-    private String coPdf;
+    private String pdfName;
 
     private LocalDate printDate;
 

@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CoNoticeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CoNoticeApplication.class, args);
+		SpringApplication.run(CoNoticeApplication.class,args);
 	}
 
 }
