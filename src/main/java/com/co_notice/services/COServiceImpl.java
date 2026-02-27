@@ -73,7 +73,7 @@ public class COServiceImpl implements COService {
             });
         }
     }
-
+//abc
     @Transactional
     private void processEachTrigger(CoTriggerEntity trigger) {
 
@@ -218,7 +218,6 @@ public class COServiceImpl implements COService {
 
         return file;
     }
-
     private void addHeader(PdfPTable table, String text) {
 
         PdfPCell cell = new PdfPCell();
