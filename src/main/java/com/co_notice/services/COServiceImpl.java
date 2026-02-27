@@ -81,13 +81,12 @@ public class COServiceImpl implements COService {
         log.info("Processing trigger for case: {}", caseNum);
 
         try {
-
+//
             EDEntity ed = edRepo.findByCaseNum(caseNum);
             if (ed == null) {
                 log.warn("Eligibility record not found for case: {}", caseNum);
                 return;
             }
-
             DcCaseEntity dcCase =
                     caseRepo.findById(caseNum).orElse(null);
             if (dcCase == null) {
